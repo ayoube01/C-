@@ -1,0 +1,12 @@
+etape1: completer ce qu'il fois sur solveurs_tridiag
+etap2: void solveur_LU_tridiag(tridiag *A , vecteur *b,vecteur *x);
+        void solveur_Chol_tridiag(tridiag *A , vecteur *b,vecteur *x);
+etape3:  calculer le residu ||r||= ||b -A*X||
+        void profuit_tridiag_vecteur(tridiag *A , vecteur *X,vecteur *Y); avec y = A*X
+
+
+
+resolution de dV(2,4,4,4,2)
+              lV(-1,-1,-1,-1)
+              uV(-1,-1,-1,-1)
+              b=(0,4,6,8,6)
