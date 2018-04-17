@@ -1,10 +1,10 @@
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
-/* %%%  Résolution du PB Elliptique 1D par Différences Finies:    %%% */
+/* %%%  RÃ©solution du PB Elliptique 1D par DiffÃ©rences Finies:    %%% */
 /* %%%      -(K(x)u')' + p(x) u = f(x)  dans [0,L]                %%% */
 /* %%%                     u(0) = a    (Dirichlet)                %%% */
 /* %%%                     u(L) = b    (Dirichlet)                %%% */
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
-/* %%%  F.Lefèvre, dernière modification: 09/11/2014              %%% */
+/* %%%  F.LefÃ¨vre, derniÃ¨re modification: 09/11/2014              %%% */
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 
 /* ================================================================== */
@@ -35,7 +35,7 @@
 #define CAS_PB  1
 
 /* ================================================================== */
-/* ===                  DECLARATION DES STRUCTURES                === */
+/* ***===                  DECLARATION DES STRUCTURES                === */
 /* ================================================================== */
 
 typedef struct {
@@ -196,7 +196,7 @@ void Solveur_TriDiag_Chol(Vecteur *dA, Vecteur *lA, Vecteur *b, Vecteur *x)
                dL->tab[i+1]=sqrt(dA->tab[i+1]-(lL->tab[i]*lL->tab[i]));
 
             }
-            /*résolution de L*Y = b*/
+            /*rÃ©solution de L*Y = b*/
            Vecteur *Y;
             Y=alloc_Vecteur(dA->length);
             Y->tab[1]=b->tab[1]/dL->tab[1];
@@ -205,7 +205,7 @@ void Solveur_TriDiag_Chol(Vecteur *dA, Vecteur *lA, Vecteur *b, Vecteur *x)
               Y->tab[i]=(b->tab[i]-lL->tab[i-1]*Y->tab[i-1])/dL->tab[i] ;
 
             }
-            /*resolution de L(transposé)*x=Y*/
+            /*resolution de L(transposÃ©)*x=Y*/
            x->tab[dA->length]=Y->tab[dA->length]/dL->tab[dA->length];
            for(i=dA->length-1;i>0;i--)
            {
